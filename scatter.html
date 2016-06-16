@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>散点图</title>
+
+	<script src="d3.js"></script>
+	<!--<script src="scatter1.js"></script>-->
+	<script src="scatter.js"></script>
+	<script src="jquery.js"></script>
+
+	<!--定义css：可以放在head和body之间-->
+	<style type="text/css">
+		.axis path,
+		.axis line {
+			fill: none;
+			stroke: black;
+			shape-rendering: crispEdges;
+		}
+		.axis text {
+			font-family: sans-serif;
+			font-size: 11px;
+		}
+
+		#scatterDiv{
+			position: relative;
+			width: 50%;
+		}
+	</style>
+
+
+</head>
+<body onload="Scatter()">
+	<div id="scatterDiv"> 
+
+		<script type="text/javascript">
+			function Scatter(){
+				
+				var div = "#scatterDiv";
+
+				//定义画布宽度和高度
+				var width = $("#scatterDiv").width();
+				var height = $("#scatterDiv").width();
+
+				//定义数据
+				var dataset = [
+								[120 , 90],
+								[58 , 200],
+								[168 , 364],
+								[300 , 300],
+								[370 , 298],
+								[60 , 104],
+								[200 , 150],
+								[320 , 260],
+								[100 , 350],
+								[240 , 320],
+								[280 , 180],
+								[180 , 273],
+								[500 , 200],
+								[550 , 500],
+								[110 , 28],
+								[450 , 350],
+								[50 , 50],
+								[410 , 550],
+								[600 , 330], //超出了边界范围 out of the bounds
+								[700 , 200],
+								[310 , 600], 
+								[825 , 650] //超出
+							  ];
+
+
+				//定义颜色
+				var color = d3.scale.category20();
+
+				//定义画布周边的空白
+				var padding = {left:30, right:30, top:30, bottom:30};
+				
+				DrawScatter(div,width,height,dataset,color,padding);
+
+			}
+
+
+
+
+
+		</script>
+	</div>
+
+</body>
+</html>
