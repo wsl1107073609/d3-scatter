@@ -43,6 +43,7 @@
 				var height = $("#scatterDiv").width();
 
 				//定义数据
+				/*
 				var dataset = [
 								[120 , 90],
 								[58 , 200],
@@ -67,6 +68,18 @@
 								[310 , 600], 
 								[825 , 650] //超出
 							  ];
+				*/
+				
+				//随机生成数据
+				var dataset = [];
+				var dataNumber = 50;
+				var xRange = Math.random() * 1000;
+				var yRange = Math.random() * 1000;
+				for (var i = 0; i < dataNumber; i++) {
+					var newNumber1 = Math.floor(Math.random() * xRange);
+					var newNumber2 = Math.floor(Math.random() * yRange);
+					dataset.push([newNumber1, newNumber2]);
+				}
 
 
 				//定义颜色
